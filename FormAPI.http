@@ -1,0 +1,32 @@
+@FormAPI_HostAddress = http://localhost:5292
+@contentType = application/json
+
+### Testar se a API está rodando
+GET {{FormAPI_HostAddress}}/api/form/status
+Accept: {{contentType}}
+
+### Listar todos os formulários
+GET {{FormAPI_HostAddress}}/api/form
+Accept: {{contentType}}
+
+### Buscar formulário por ID
+GET {{FormAPI_HostAddress}}/api/form/1
+Accept: {{contentType}}
+
+### Criar novo formulário
+POST {{FormAPI_HostAddress}}/api/form
+Content-Type: {{contentType}}
+
+{
+  "name": "José Clévison",
+  "email": "jose@example.com",
+  "phone": "11999999999",
+  "age": 27,
+  "gender": "Male",
+  "address": "Rua XPTO, 123",
+  "country": "Brasil"
+}
+
+### Deletar um formulário por ID
+DELETE {{FormAPI_HostAddress}}/api/form/1
+Accept: {{contentType}}
